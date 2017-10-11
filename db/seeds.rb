@@ -98,7 +98,7 @@ month = "Octubre"
 
 
 def stat(p_boat, p_month)
-  Record.where(boat_id: p_boat).where(mes: p_month)
+  Record.where(boat_id: p_boat).where(mes: p_month).sum(:account)
 
 end
 
