@@ -105,36 +105,3 @@ record5 = Record.create(boat_id: boat1.id, product_id: product14.id, mes: "Octub
 # p stat(boat, month)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

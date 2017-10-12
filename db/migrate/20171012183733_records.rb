@@ -1,4 +1,4 @@
-class CreateRecords < ActiveRecord::Migration[5.1]
+class Records < ActiveRecord::Migration[5.1]
   def change
     create_table :records do |t|
       t.references :boat, foreign_key: true
@@ -9,3 +9,9 @@ class CreateRecords < ActiveRecord::Migration[5.1]
     end
   end
 end
+
+
+
+
+
+
