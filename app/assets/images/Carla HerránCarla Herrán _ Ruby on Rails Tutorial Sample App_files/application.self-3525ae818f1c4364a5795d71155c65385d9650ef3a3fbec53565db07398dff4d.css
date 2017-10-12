@@ -12,9 +12,10 @@
  * files in this directory. It is generally better to create a new file per
  * style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
  
 #gastos { 
     margin-left: 30px;
@@ -37,13 +38,6 @@
 }
 
 
-/*#edit { 
-    font-color: white;
-}
-
-#destroy { 
-    color: white;
-}*/
 
 
 

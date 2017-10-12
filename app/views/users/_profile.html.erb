@@ -5,20 +5,24 @@ Welcome, <%= @user.name %>
 	<div class="row">
 	  <div class="col-md-3">
 	  	<%= link_to image_tag("add_icon.png", size: "150x150", alt: "Gasto"), 	records_path %>
+	  	<h4 id="gastos"> GASTOS </h4>
 	</div>
 	
 	<div class="row">
 	  <div class="col-md-3">
 	  	<%= link_to image_tag("product_icon.jpg", size: "150x150", alt: "Product") %>
+	  	<h4 id="productos"> PRODUCTOS </h4>
 	</div>
 	
 	<div class="row">
 	  <div class="col-md-3">
 	  	<%= link_to image_tag("box_icon.png", size: "150x150", alt: "Category")  %>
+	  	<h4 id="categorias"> CATEGORÍAS </h4>
 	</div>
 	
 	<div class="row">
 	  <div class="col-md-3">
 	  	<%= link_to image_tag("stats_icon.png", size: "150x150", alt: "Stats"), 	stats_path %>
+	  	<h4 id="stats"> ESTADÍSTICAS </h4>
 	</div>
 </figure>

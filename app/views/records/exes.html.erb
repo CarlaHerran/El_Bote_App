@@ -21,8 +21,8 @@
 	     <td><%= @products.find(exe.product_id).name %></td>
 	     <td><%= exe.mes %></td>
 	     <td><%= exe.account %></td>
-	     <td><button type="button" class="btn btn-primary"><%= link_to 'Edit', edit_record_path(exe) %></button></td>
-	     <td><button type="button" class="btn btn-danger"><%= link_to 'Destroy', destroy_record_path(exe), method: :delete,
+	     <td><button type="button" class="btn btn-primary" ><%= link_to 'Edit', edit_record_path(exe) %></button></td>
+	     <td><button type="button" class="btn btn-danger" ><%= link_to 'Destroy', destroy_record_path(exe), method: :delete,
                                   data: { confirm: "You sure?" } %></button></td>
 	   </tr>
 	 <% end %>
