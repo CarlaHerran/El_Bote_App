@@ -2,12 +2,19 @@
 <% provide(:button_text, 'Guardar') %>
 <h3>Editar Gasto</h3>
 
-<%= form_for @record, url: create_record_path, :method => :POST do |f| %>
+<%= form_for @record, url: update_record_path(@record), :method => :POST do |f| %>
      <p>
+
      <%= f.select :mes, ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']%>
 
 	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: true %>
    	<%= f.text_field :account, class: "input" %>
+	<%= f.hidden_field :boat_id, :value => @record.boat_id %>
+
+
+
+
+
  </p>
  <p>
    <%= f.submit "Save", class: "button is-success is-large" %>

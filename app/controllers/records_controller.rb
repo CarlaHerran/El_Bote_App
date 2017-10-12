@@ -25,19 +25,36 @@ class RecordsController < ApplicationController
 	def edit
 		p "Entrando a edit!" * 50
         p @record = Record.find(params[:record_id])
-        # redirect_to edit_path
     end
 
     def update
-        @record = Record.find(params[:record_id])
-        # if @record.update(record_params)
-        #      redirect_to records_path
-        # else
-        #     render 'edit'
-        # end
+    	p "Llegamos a update?" * 50
+        p @record = Record.find(params[:record_id])
+        p params
+        if @record.update(record_params)
+        	flash[:success] = "Updated Succesfully"
+        	redirect_to records_path
+        else
+            render 'edit'
+        end
 
     end
 
+    def destroy
+    	p "DESTROY" * 50
+    	Record.find(params[:record_id]).destroy
+    	flash[:success] = "Exe deleted"
+    	redirect_to records_path
+    end	
+
+
+
+
+	private
+	
+	    def record_params
+	        params.require(:record).permit([:boat_id, :product_id, :mes, :account])
+	    end
 
 
 end	
