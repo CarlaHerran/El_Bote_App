@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get     '/records/new',                          to: 'records#new',        			         as: 'new_record'
   get     '/products',   		                       to: 'products#product_options',         as: 'products'
   get     '/categories', 		                       to: 'categories#category_options',      as: 'categories'
+  
   get     '/stats',      		                       to: 'stats#show_stats',        			   as: 'stats'
   get     '/records/:record_id/edit',              to: 'records#edit',                     as: 'edit_record'
   delete  '/records/:record_id/destroy',           to: 'records#destroy',                  as: 'destroy_record'
-
 
   post '/records/:record_id/update', to: 'records#update',                  as: 'update_record'
   post   '/login',                   to: 'sessions#create'

@@ -92,16 +92,6 @@ record4 = Record.create(boat_id: boat1.id, product_id: product10.id, mes: "Octub
 record5 = Record.create(boat_id: boat1.id, product_id: product14.id, mes: "Octubre", account: 30.00)
 
 
-# boat = 1
 
-# month = "Octubre"
-
-
-# def stat(p_boat, p_month)
-#   Record.where(boat_id: p_boat).where(mes: p_month).sum(:account)
-
-# end
-
-# p stat(boat, month)
 
 

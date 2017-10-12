@@ -1,0 +1,26 @@
+<p> WELCOME TO THE STATS VIEW!</p>
+
+<% if @stat %>
+	<h1>Statistics</h1>
+
+	<div class="row">
+	  <table class="col-md-12">
+	     <tr class="something">
+	       <th class="col-md-6">MES</th>
+	       <th class="col-md-6">TOTAL</th>
+	       <th colspan="6"></th>
+	     </tr>
+
+	 <% @stat.each do |stat| %>
+
+	   <tr>
+	     <td ><%= stat[0] %></td>
+	     <td ><%= number_to_currency stat[1], precision: 2 %></td>
+	   </tr>  
+
+	 <% end %>
+	  </table>   
+	</div>
+<% end %>	 
+
+
