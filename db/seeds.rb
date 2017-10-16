@@ -46,14 +46,14 @@ end
 
 
 boat1 = Boat.create(name: "San Piter")
-boat2 = Boat.create(name: "Changuis")
-boat3 = Boat.create(name: "Rors")
+# boat2 = Boat.create(name: "Changuis")
+# boat3 = Boat.create(name: "Rors")
 
 
 ocean1 = Ocean.create(user_id: user1.id, boat_id: boat1.id)
 ocean2 = Ocean.create(user_id: user2.id, boat_id: boat1.id)
 ocean3 = Ocean.create(user_id: user3.id, boat_id: boat1.id)
-ocean4 = Ocean.create(user_id: user4.id, boat_id: boat3.id)
+# ocean4 = Ocean.create(user_id: user4.id, boat_id: boat3.id)
 
 
 
@@ -64,25 +64,25 @@ category4 = Category.create(name: "Servicios")
 category5 = Category.create(name: "Daños")
 
 product1 = Product.create(name: "Garrafón Agua", category_id: category1.id)
-# product2 = Product.create(name: "Trapo", category_id: category1.id)
-# product3 = Product.create(name: "Salsa Inglesa", category_id: category1.id)
+product2 = Product.create(name: "Trapo", category_id: category1.id)
+product3 = Product.create(name: "Salsa Inglesa", category_id: category1.id)
 
 product4 = Product.create(name: "Papel de Baño", category_id: category2.id)
-# product5 = Product.create(name: "Jabón de Manos", category_id: category2.id)
-# product6 = Product.create(name: "Pasta Dental", category_id: category2.id)
+product5 = Product.create(name: "Jabón de Manos", category_id: category2.id)
+product6 = Product.create(name: "Pasta Dental", category_id: category2.id)
 
 product7 = Product.create(name: "Foco", category_id: category3.id)
-# product8 = Product.create(name: "Escoba", category_id: category3.id)
-# product9 = Product.create(name: "Cojín", category_id: category3.id)
+product8 = Product.create(name: "Escoba", category_id: category3.id)
+product9 = Product.create(name: "Cojín", category_id: category3.id)
 
 product10 = Product.create(name: "Gas", category_id: category4.id)
-# product11 = Product.create(name: "Luz", category_id: category4.id)
-# product12 = Product.create(name: "Agua", category_id: category4.id)
-# product13 = Product.create(name: "Internet", category_id: category4.id)
+product11 = Product.create(name: "Luz", category_id: category4.id)
+product12 = Product.create(name: "Agua", category_id: category4.id)
+product13 = Product.create(name: "Internet", category_id: category4.id)
 
 product14 = Product.create(name: "Vajilla", category_id: category5.id)
-# product15 = Product.create(name: "Muebles", category_id: category5.id)
-# product16 = Product.create(name: "Otro", category_id: category5.id)
+product15 = Product.create(name: "Muebles", category_id: category5.id)
+product16 = Product.create(name: "Otro", category_id: category5.id)
 
 
 record1 = Record.create(boat_id: boat1.id, product_id: product1.id, mes: "Octubre", account: 50.50)
