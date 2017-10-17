@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:edit, :update, :destroy]
 
   def index
     @users = User.paginate(page: params[:page])
@@ -27,10 +27,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    p "´" * 50
+    p "edit"
     @user = User.find(params[:id])
   end
 
   def update
+    p "________________________" * 50
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       # Handle a successful update.
@@ -64,7 +67,9 @@ class UsersController < ApplicationController
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      p "-" * 50
+      p current_user.admin == true
+      redirect_to(root_url) unless current_user?(@user) || current_user.admin == true
     end
 
     # Confirms an admin user.
