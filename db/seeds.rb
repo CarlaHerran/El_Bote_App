@@ -10,25 +10,25 @@ user1 = User.create!(name:  "Carla Herrán",
              admin: true)
 
 
-user2 =User.create!(name:  "Carolina M",
-             email: "caro@mail.com",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: false)
+# user2 =User.create!(name:  "Carolina M",
+#              email: "caro@mail.com",
+#              password:              "foobar",
+#              password_confirmation: "foobar",
+#              admin: false)
 
 
-user3 =User.create!(name:  "Valentín S",
-             email: "valentin@mail.com",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: false)
+# user3 =User.create!(name:  "Valentín S",
+#              email: "valentin@mail.com",
+#              password:              "foobar",
+#              password_confirmation: "foobar",
+#              admin: false)
 
 
-user4 =User.create!(name:  "Abel Hernández",
-             email: "herdez@gmail.com",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: false)
+# user4 =User.create!(name:  "Abel Hernández",
+#              email: "herdez@gmail.com",
+#              password:              "foobar",
+#              password_confirmation: "foobar",
+#              admin: false)
 
 99.times do |n|
   name  = Faker::Name.name
