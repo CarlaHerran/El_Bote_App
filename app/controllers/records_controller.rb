@@ -12,8 +12,13 @@ class RecordsController < ApplicationController
 
 	def create
 	  p "Método create de records controller" * 20
-	  boat = current_user.boats
-	  boat_id = boat[0].id
+	  # Aquí el error me marcaba NoMethodError in RecordsController#create undefined method 'id' for nil:NilClass.
+	  # Lo que hice fue cambiar:
+	  # boat = current_user.boats
+	  # boat_ide = boat[0].id
+	  # Por las siguientes dos líneas de abajo, siendo que como ahorita solo existe un boat (1), no es necesario buscar el boat del current_user, porque todos tienen el mismo. 
+	  boat = Boat.find(1)
+	  boat_id = boat.id
 	  mes = params[:record][:mes]
 	  product = params[:record][:product_id]
 	  gasto = params[:record][:account]

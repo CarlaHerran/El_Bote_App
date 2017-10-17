@@ -1,10 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 
 
 user1 = User.create!(name:  "Carla Herrán",
@@ -51,8 +47,14 @@ boat1 = Boat.create(name: "San Piter")
 
 
 ocean1 = Ocean.create(user_id: user1.id, boat_id: boat1.id)
-ocean2 = Ocean.create(user_id: user2.id, boat_id: boat1.id)
-ocean3 = Ocean.create(user_id: user3.id, boat_id: boat1.id)
+# Aquí "hice trampa" porque comenté los oceans a los que pertenecen los usuarios, para no tener problemas al querer eliminarlos.
+# Me daba este error:
+# ActiveRecord::InvalidForeignkey in UsersController#destroy
+# SQLite3::Constraint Exception:ForeignKey constraint failed:DELETE FROM "users" WHERE "users"."id"=?
+# En esta línea:
+# ----- User.find(params[:id]).destroy ----
+# ocean2 = Ocean.create(user_id: user2.id, boat_id: boat1.id)
+# ocean3 = Ocean.create(user_id: user3.id, boat_id: boat1.id)
 # ocean4 = Ocean.create(user_id: user4.id, boat_id: boat3.id)
 
 
