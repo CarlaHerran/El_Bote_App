@@ -8,7 +8,7 @@
 	<table class="table table-striped">
 	 <tr class="something">
 	   <th id="tabletitle1" class="col-md-2">PRODUCT</th>
-	   <th id="tabletitle2" class="col-md-2">MES</th>
+	   <th id="tabletitle2" class="col-md-2">M / D / Y</th>
 	   <th id="tabletitle3" class="col-md-2">AMOUNT</th>
 	   <th id="tabletitle3" class="col-md-4">NOTES</th>
 	   <th colspan="6"></th>
@@ -16,7 +16,8 @@
 	 <% @exes.each do |exe| %>
 	   <tr>
 	     <td><%= @products.find(exe.product_id).name %></td>
-	     <td><%= exe.mes %></td>
+	     <!-- Aquí le agregué month y day y year, dividiendo en 3 partes esta sección, para poder tener los datos completos del seed -->
+	     <td><%= exe.mes.month %> / <%= exe.mes.day %> / <%= exe.mes.year %></td>
 	     <td><%= exe.account %></td>
 	     <td><%= exe.note %></td></td>
 	    

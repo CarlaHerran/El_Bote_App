@@ -3,10 +3,13 @@
 
 <%= form_for @record, url: create_record_path, :method => :POST do |f| %>
      <p>
-     <%= f.select :mes, ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']%>
+     
+     <%=date_select(:calendar, :date, discard_year: true)%>
 
-	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: true %>
+	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %>
+	<p>Amount:</p>
    	<%= f.text_field :account, class: "input" %>
+   	<p>Add a Note:</p>
    	<%= f.text_field :note, class: "input" %>
 
  </p>

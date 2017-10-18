@@ -87,11 +87,11 @@ product15 = Product.create(name: "Muebles", category_id: category5.id)
 product16 = Product.create(name: "Otro", category_id: category5.id)
 
 
-record1 = Record.create(boat_id: boat1.id, product_id: product1.id, mes: "Octubre", account: 50.50, note: "Ay caramba")
-record2 = Record.create(boat_id: boat1.id, product_id: product4.id, mes: "Octubre", account: 75.00, note: "Ay caramba")
-record3 = Record.create(boat_id: boat1.id, product_id: product7.id, mes: "Octubre", account: 80.75, note: "Ay caramba")
-record4 = Record.create(boat_id: boat1.id, product_id: product10.id, mes: "Octubre", account: 395.50, note: "Ay caramba")
-record5 = Record.create(boat_id: boat1.id, product_id: product14.id, mes: "Octubre", account: 30.00, note: "Ay caramba")
+record1 = Record.create(boat_id: boat1.id, product_id: product1.id, mes: '2001,2,3', account: 50.50, note: "Ay caramba")
+record2 = Record.create(boat_id: boat1.id, product_id: product4.id, mes: '2001,2,3', account: 75.00, note: "Ay caramba")
+record3 = Record.create(boat_id: boat1.id, product_id: product7.id, mes: '2001,2,3', account: 80.75, note: "Ay caramba")
+record4 = Record.create(boat_id: boat1.id, product_id: product10.id, mes: '2001,2,3', account: 395.50, note: "Ay caramba")
+record5 = Record.create(boat_id: boat1.id, product_id: product14.id, mes: '2001,2,3', account: 30.00, note: "Ay caramba")
 
 
 

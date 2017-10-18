@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   post     '/records/:record_id/edit',             to: 'records#edit',                     as: 'edit_record'
 
 
-
   # post     '/users/:user_id',                     to: 'users#update',                       as: 'update_user'
+  # get     '/records/new',                          to: 'records#new',                     as: 'new_record'
   post     '/records/new',                          to: 'records#new',        			       as: 'new_record'
   post  '/users/:id(.:format)',                     to: 'users#edit'
   post '/records/:record_id/update',                to: 'records#update',                  as: 'update_record'

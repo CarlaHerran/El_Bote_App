@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171012183733) do
   create_table "records", force: :cascade do |t|
     t.integer "boat_id"
     t.integer "product_id"
-    t.string "mes"
+    t.datetime "mes"
     t.float "account"
     t.string "note"
     t.datetime "created_at", null: false
