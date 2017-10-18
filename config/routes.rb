@@ -7,20 +7,20 @@ Rails.application.routes.draw do
   get     '/login',       		                     to: 'sessions#new'
   delete  '/logout',      		                     to: 'sessions#destroy'
   get     '/records',    		                       to: 'records#exes',        				     as: 'records'
-  get     '/records/new',                          to: 'records#new',        			         as: 'new_record'
-  get     '/products',   		                       to: 'products#product_options',         as: 'products'
-  get     '/categories', 		                       to: 'categories#category_options',      as: 'categories'
-  get     '/stats',      		                       to: 'stats#show_stats',        			   as: 'stats'
-  get     '/records/:record_id/edit',              to: 'records#edit',                     as: 'edit_record'
+  get     '/products',                             to: 'products#product_options',         as: 'products'
+  get     '/categories',                           to: 'categories#category_options',      as: 'categories'
+  get     '/stats',                                to: 'stats#show_stats',                 as: 'stats'
   delete  '/records/:record_id/destroy',           to: 'records#destroy',                  as: 'destroy_record'
+  post     '/records/:record_id/edit',             to: 'records#edit',                     as: 'edit_record'
 
- post  '/users/:id(.:format)',  to: 'users#edit'
 
 
   # post     '/users/:user_id',                     to: 'users#update',                       as: 'update_user'
-  post '/records/:record_id/update', to: 'records#update',                  as: 'update_record'
-  post   '/login',                   to: 'sessions#create'
-  post    '/records',                to: 'records#create',                  as: 'create_record'
+  post     '/records/new',                          to: 'records#new',        			       as: 'new_record'
+  post  '/users/:id(.:format)',                     to: 'users#edit'
+  post '/records/:record_id/update',                to: 'records#update',                  as: 'update_record'
+  post   '/login',                                  to: 'sessions#create'
+  post    '/records',                               to: 'records#create',                  as: 'create_record'
   
   resources :users
 end

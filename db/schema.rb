@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171012183733) do
     t.integer "product_id"
     t.string "mes"
     t.float "account"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["boat_id"], name: "index_records_on_boat_id"

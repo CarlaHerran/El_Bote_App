@@ -9,6 +9,7 @@
 
 	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: true %>
    	<%= f.text_field :account, class: "input" %>
+   	<%= f.text_field :note, class: "input" %>
 	<%= f.hidden_field :boat_id, :value => @record.boat_id %>
 
 

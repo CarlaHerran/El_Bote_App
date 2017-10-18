@@ -22,7 +22,8 @@ class RecordsController < ApplicationController
 	  mes = params[:record][:mes]
 	  product = params[:record][:product_id]
 	  gasto = params[:record][:account]
-	  @record = Record.create(boat_id: boat_id, product_id: product, mes: mes, account: gasto)
+	  note = params[:record][:note]
+	  @record = Record.create(boat_id: boat_id, product_id: product, mes: mes, account: gasto, note: note)
 	  redirect_to records_path
 	end
 
@@ -58,7 +59,7 @@ class RecordsController < ApplicationController
 	private
 	
 	    def record_params
-	        params.require(:record).permit([:boat_id, :product_id, :mes, :account])
+	        params.require(:record).permit([:boat_id, :product_id, :mes, :account, :note])
 	    end
 
 

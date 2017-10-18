@@ -7,6 +7,8 @@
 
 	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: true %>
    	<%= f.text_field :account, class: "input" %>
+   	<%= f.text_field :note, class: "input" %>
+
  </p>
  <p>
    <%= f.submit "Save", class: "button is-success is-large" %>

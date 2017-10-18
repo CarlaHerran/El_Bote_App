@@ -37,13 +37,18 @@
 }
 
 
-/*#edit { 
-    font-color: white;
+#tabletitle1 {
+    font-size: 23px;
+
 }
 
-#destroy { 
-    color: white;
-}*/
+#tabletitle2 {
+    font-size: 23px;
+}
+
+#tabletitle3 {
+    font-size: 23px;
+}
 
 
 
