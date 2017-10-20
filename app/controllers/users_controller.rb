@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    p "________________________" * 50
+    p "_" * 50
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       # Handle a successful update.
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
       p current_user
       p @user
       redirect_to(root_url) unless current_user?(@user) || current_user.admin == true
-      flash[:danger] = "I'm sorry, You are not allowed to do this."
+      flash[:danger] = "I'm sorry, You are not allowed to do this." unless current_user?(@user) || current_user.admin == true 
     end
 
     # Confirms an admin user.
