@@ -17,7 +17,8 @@
 	   <tr>
 	     <td><%= @products.find(exe.product_id).name %></td>
 	     <!-- Aquí le agregué month y day y year, dividiendo en 3 partes esta sección, para poder tener los datos completos del seed -->
-	     <td><%= exe.fecha %></td>
+	     <!-- Aquí esto va a tener problemas si la clase de fecha es nil -->
+	     <td><%= exe.fecha.year %> / <%= exe.fecha.month %> / <%= exe.fecha.day %></td>
 	     <td><%= exe.account %></td>
 	     <td><%= exe.note %></td></td>
 	    
