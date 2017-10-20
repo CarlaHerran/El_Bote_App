@@ -19,11 +19,13 @@ class RecordsController < ApplicationController
 	  # Por las siguientes dos líneas de abajo, siendo que como ahorita solo existe un boat (1), no es necesario buscar el boat del current_user, porque todos tienen el mismo. 
 	  boat = Boat.find(1)
 	  boat_id = boat.id
-	  mes = params[:record][:mes]
+	  p "-" * 50
+	  p params[:calendar]["fecha(1i)"]
+	  p fecha = params[:record][:calendar]
 	  product = params[:record][:product_id]
 	  gasto = params[:record][:account]
 	  note = params[:record][:note]
-	  @record = Record.create(boat_id: boat_id, product_id: product, mes: mes, account: gasto, note: note)
+	  @record = Record.create(boat_id: boat_id, product_id: product, fecha: fecha, account: gasto, note: note)
 	  redirect_to records_path
 	end
 
@@ -59,7 +61,7 @@ class RecordsController < ApplicationController
 	private
 	
 	    def record_params
-	        params.require(:record).permit([:boat_id, :product_id, :mes, :account, :note])
+	        params.require(:record).permit([:boat_id, :product_id, :fecha, :account, :note])
 	    end
 
 

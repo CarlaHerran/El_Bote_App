@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171012183733) do
   create_table "records", force: :cascade do |t|
     t.integer "boat_id"
     t.integer "product_id"
-    t.datetime "mes"
+    t.datetime "fecha"
     t.float "account"
     t.string "note"
     t.datetime "created_at", null: false
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20171012183733) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "index_users_on_email"
   end
 
 end

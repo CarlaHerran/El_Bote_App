@@ -4,7 +4,7 @@
 <%= form_for @record, url: create_record_path, :method => :POST do |f| %>
      <p>
      
-     <%=date_select(:calendar, :date, discard_year: true)%>
+    <%=date_select(:calendar, :fecha)%>
 
 	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %>
 	<p>Amount:</p>

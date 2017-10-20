@@ -5,7 +5,7 @@
 <%= form_for @record, url: update_record_path(@record), :method => :POST do |f| %>
      <p>
 <!-- Cambié el f.select con el array de meses, por date_select  -->
-     <%=date_select(:calendar, :date, discard_year: true)%>
+     <%=date_select(:calendar, :date)%>
 
 	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %>
 	<p>Amount:</p>
