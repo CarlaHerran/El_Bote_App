@@ -41,9 +41,17 @@ class RecordsController < ApplicationController
     end
 
     def update
-    	p "Llegamos a update?" * 50
-        p @record = Record.find(params[:record_id])
-        p params
+    	# p "+" * 50
+    	# p "Llegamos a update?" 
+         @record = Record.find(params[:record_id])
+
+           año = params[:calendar]["fecha(1i)"]
+		   mes = params[:calendar]["fecha(2i)"]
+		   dia = params[:calendar]["fecha(3i)"]
+
+
+		# Actualizo la fecha antes de utilizar el método private de record_params, porque no encontré el formato datetime de "fecha".   
+        @record.update(fecha: Time.gm(año, mes, dia))
         if @record.update(record_params)
         	flash[:success] = "Updated Succesfully"
         	redirect_to records_path
