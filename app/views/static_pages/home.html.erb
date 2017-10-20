@@ -4,11 +4,18 @@
   <h2>
     FOR ROOMMATES
   </h2>
+<<<<<<< HEAD
 
   <!-- Esto lo comenté porque es redundate que aparezca cuando ya iniciaste sesión. -->
   <% if logged_in? == false %>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   <% end %>
+=======
+<!-- Esto lo comenté porque es redundate que aparezca cuando ya iniciaste sesión. -->
+   <% if logged_in? == false %>
+     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+   <% end %>
+>>>>>>> validate-ilegal-edit
 </div>
 
 <%= link_to image_tag("bote.png", alt: "Bote logo"),

@@ -1,26 +1,72 @@
-<p> WELCOME TO THE STATS VIEW!</p>
+<!-- <p> WELCOME TO THE STATS VIEW!</p>
+ -->
 
-<% if @stat %>
 	<h1>Statistics</h1>
 
 	<div class="row">
 	  <table class="table table-striped">
 	     <tr class="something">
-	       <th class="col-md-6">MES</th>
-	       <th class="col-md-6">TOTAL</th>
+	       <th class="col-md-6"><h4>FECHA</h4></th>
+	       <th class="col-md-6"><h4>TOTAL</h4></th>
 	       <th colspan="6"></th>
 	     </tr>
 
-	 <% @stat.each do |stat| %>
+	 
 
 	   <tr>
-	     <td ><%= stat[0] %></td>
-	     <td ><%= number_to_currency stat[1], precision: 2 %></td>
+	     <td ><p>ENERO</p></td>
+	     <td ><%= @enero %></td>	
 	   </tr>  
+	   <tr>
+	     <td ><p>FEBRERO</p></td>
+	     <td ><%= @febrero %></td>	
+	   </tr>  
+	   <tr>
+	     <td ><p>MARZO</p></td>
+	     <td ><%= @marzo %></td>	
+	   </tr>  
+	   <tr>
+	     <td ><p>ABRIL</p></td>
+	     <td ><%= @abril %></td>	
+	   </tr>  
+	   <tr>
+	     <td ><p>MAYO</p></td>
+	     <td ><%= @mayo %></td>	
+	   </tr>  
+	   <tr>
+	     <td ><p>JUNIO</p></td>
+	     <td ><%= @junio %></td>	
+	   </tr>  
+	   <tr>
+	     <td ><p>JULIO</p></td>
+	     <td ><%= @julio %></td>	
+	   </tr>  
+	   <tr>
+	     <td ><p>AGOSTO</p></td>
+	     <td ><%= @agosto %></td>	
+	   </tr>  
+	   <tr>
+	     <td ><p>SEPTIEMBRE</p></td>
+	     <td ><%= @septiembre %></td>	
+	   </tr>  
+	    <tr>
+	     <td ><p>OCTUBRE</p></td>
+	     <td ><%= @octubre %></td>	
+	   </tr> 
+	    <tr>
+	     <td ><p>NOVIEMBRE</p></td>
+	     <td ><%= @noviembre %></td>	
+	   </tr> 
+	    <tr>
+	     <td ><p>DICIEMBRE</p></td>
+	     <td ><%= @diciembre %></td>	
+	   </tr> 
 
-	 <% end %>
+	   
+
+	 
 	  </table>   
 	</div>
-<% end %>	 
+	 
 
 
