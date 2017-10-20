@@ -25,12 +25,12 @@ class RecordsController < ApplicationController
 	  p mes = params[:calendar]["fecha(2i)"]
 	  p dia = params[:calendar]["fecha(3i)"]
 
-	  fecha = params[:record][:calendar]
+	  
 
 	  product = params[:record][:product_id]
 	  gasto = params[:record][:account]
 	  note = params[:record][:note]
-	  @record = Record.create(boat_id: boat_id, product_id: product, fecha: fecha, account: gasto, note: note)
+	  @record = Record.create(boat_id: boat_id, product_id: product, fecha: Time.gm(año, mes, dia), account: gasto, note: note)
 	  redirect_to records_path
 	end
 
