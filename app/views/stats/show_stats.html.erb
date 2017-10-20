@@ -1,12 +1,12 @@
-<p> WELCOME TO THE STATS VIEW!</p>
-
+<!-- <p> WELCOME TO THE STATS VIEW!</p>
+ -->
 <% if @stat %>
 	<h1>Statistics</h1>
 
 	<div class="row">
 	  <table class="table table-striped">
 	     <tr class="something">
-	       <th class="col-md-6">MES</th>
+	       <th class="col-md-6">FECHA</th>
 	       <th class="col-md-6">TOTAL</th>
 	       <th colspan="6"></th>
 	     </tr>
@@ -14,8 +14,8 @@
 	 <% @stat.each do |stat| %>
 
 	   <tr>
-	     <td ><%= stat[0] %></td>
-	     <td ><%= number_to_currency stat[1], precision: 2 %></td>
+	     <td ><%= stat[0].fecha.year %> / <%= stat[0].fecha.month %> / <%= stat[0].fecha.day %></td>
+	     <td ><%= number_to_currency stat[1], precision: 2 %></td>	
 	   </tr>  
 
 	 <% end %>

@@ -71,6 +71,7 @@ class UsersController < ApplicationController
       p current_user
       p @user
       redirect_to(root_url) unless current_user?(@user) || current_user.admin == true
+      flash[:danger] = "I'm sorry, You are not allowed to do this."
     end
 
     # Confirms an admin user.

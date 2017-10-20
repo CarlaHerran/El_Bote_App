@@ -1,5 +1,7 @@
-<% provide(:title, @user.name) %>
+<% if @user %>
 Welcome, <%= @user.name %>
+<% end %>
+<% provide(:title, @user.name) %>
 <br><br>
 <figure>
 	<div class="row">
