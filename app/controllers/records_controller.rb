@@ -19,13 +19,17 @@ class RecordsController < ApplicationController
 	  # Por las siguientes dos líneas de abajo, siendo que como ahorita solo existe un boat (1), no es necesario buscar el boat del current_user, porque todos tienen el mismo. 
 	  boat = Boat.find(1)
 	  boat_id = boat.id
-	  p "-" * 50
 	  # <%=date_select(:calendar, :fecha)%> Los Params buscan dentro de calendar cada una de las variables de fecha (año, mes y día), representados en el formato de string "fecha(1i)"etc.
-	  p año = params[:calendar]["fecha(1i)"]
-	  p mes = params[:calendar]["fecha(2i)"]
-	  p dia = params[:calendar]["fecha(3i)"]
+	   año = params[:calendar]["fecha(1i)"]
+	   mes = params[:calendar]["fecha(2i)"]
+	   dia = params[:calendar]["fecha(3i)"]
 	  product = params[:record][:product_id]
-	  gasto = params[:record][:account]
+
+	  p "-" * 50
+	  p gasto = params[:record][:account]
+	  if gasto == ""
+	  	gasto = 0.0
+	  end
 	  note = params[:record][:note]
 	  @record = Record.create(boat_id: boat_id, product_id: product, fecha: Time.gm(año, mes, dia), account: gasto, note: note)
 	  redirect_to records_path
