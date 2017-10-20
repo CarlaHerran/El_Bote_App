@@ -20,8 +20,13 @@ class RecordsController < ApplicationController
 	  boat = Boat.find(1)
 	  boat_id = boat.id
 	  p "-" * 50
-	  p params[:calendar]["fecha(1i)"]
-	  p fecha = params[:record][:calendar]
+	  # <%=date_select(:calendar, :fecha)%> Los Params buscan dentro de calendar cada una de las variables de fecha (año, mes y día), representados en el formato de string "fecha(1i)"etc.
+	  p año = params[:calendar]["fecha(1i)"]
+	  p mes = params[:calendar]["fecha(2i)"]
+	  p dia = params[:calendar]["fecha(3i)"]
+
+	  fecha = params[:record][:calendar]
+
 	  product = params[:record][:product_id]
 	  gasto = params[:record][:account]
 	  note = params[:record][:note]
