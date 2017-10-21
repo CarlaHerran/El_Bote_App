@@ -6,8 +6,9 @@
      
     <%=date_select(:calendar, :fecha)%>
 	  
-    <!-- Aquí le puse grouped collection: group_method - The name of a method which, when called on a member of collection, returns an array of child objects representing the <option> tags. Y le quité el dropdown de productos anterior: (quitar espacio en piquitos para que funcione erb) < %=f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %> -->
-	<%= grouped_collection_select(:category, :product_id, @categories, :products, :name, :id, :name) %>
+    <!-- Aquí le puse grouped collection: group_method - The name of a method which, when called on a member of collection, returns an array of child objects representing the <option> tags. Y le quité el dropdown de productos anterior: (quitar espacio en piquitos para que funcione erb):
+     < %=f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %> -->
+	<%= grouped_collection_select(:category, :product_id, @categories, :products, :name, :id, :name, include_blank: false) %>
 	<p>Amount:</p>
    	<%= f.text_field :account, class: "input" %>
    	<p>Add a Note:</p>

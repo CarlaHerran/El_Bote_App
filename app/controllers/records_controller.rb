@@ -1,19 +1,20 @@
 class RecordsController < ApplicationController
 	def exes
-		p "Entramos al método" * 20
+		p "EXES" * 20
 		@exes = Record.all
 		@products = Product.all
 	end
 
 	def new
-		p "-" * 50
 		@record = Record.new
 		@categories = Category.all
-		p @categories
+		
+		p "∫" * 50
+		 @categories
 	end
 
 	def create
-	  p "Método create de records controller" * 20
+	  p "C" * 20
 	  # Aquí el error me marcaba NoMethodError in RecordsController#create undefined method 'id' for nil:NilClass.
 	  # Lo que hice fue cambiar:
 	  # boat = current_user.boats
@@ -31,19 +32,22 @@ class RecordsController < ApplicationController
 	  	gasto = 0.0
 	  end
 	  note = params[:record][:note]
+
 	  @record = Record.create(boat_id: boat_id, product_id: product, fecha: Time.gm(año, mes, dia), account: gasto, note: note)
 	  redirect_to records_path
 	end
 
 
 	def edit
-		p "Entrando a edit!" * 50
-        p @record = Record.find(params[:record_id])
+		 "Edit" * 50
+         @record = Record.find(params[:record_id])
+        # Hacía falta definir @categories en este método, ya que de otra forma no lo reconocía desde el group_select de la vista edit.
+         @categories = Category.all
+
     end
 
     def update
-    	# p "+" * 50
-    	# p "Llegamos a update?" 
+    	  "UP" * 50
          @record = Record.find(params[:record_id])
 
         año = params[:calendar]["fecha(1i)"]
