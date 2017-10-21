@@ -1,20 +1,28 @@
 class RecordsController < ApplicationController
 	def exes
 		p "EXES" * 20
-		@exes = Record.all
-		@products = Product.all
+		p @exes = Record.all
+		 @products = Product.all
+
 	end
 
 	def new
+		p "NEW" * 50
 		@record = Record.new
 		@categories = Category.all
-		
-		p "∫" * 50
-		 @categories
 	end
 
 	def create
 	  p "C" * 20
+	  p "create"	  
+	  # "calendar"=>{"fecha(1i)"=>"2017", "fecha(2i)"=>"10", "fecha(3i)"=>"21"}, 
+	  # "category"=>{"product_id"=>"1"}, 
+	  # "record"=>{"account"=>"amount", 
+	  # 			"note"=>"note"}, 
+	  # "commit"=>"Save", 
+	  # "controller"=>"records", 
+	  # "action"=>"create"
+
 	  # Aquí el error me marcaba NoMethodError in RecordsController#create undefined method 'id' for nil:NilClass.
 	  # Lo que hice fue cambiar:
 	  # boat = current_user.boats
@@ -26,24 +34,26 @@ class RecordsController < ApplicationController
 	   año = params[:calendar]["fecha(1i)"]
 	   mes = params[:calendar]["fecha(2i)"]
 	   dia = params[:calendar]["fecha(3i)"]
-	  product = params[:record][:product_id]
+	  # Aquí es necesario buscar products en donde están: en categories.  
+	  product = params[:category][:product_id]
 	  gasto = params[:record][:account]
 	  if gasto == ""
 	  	gasto = 0.0
 	  end
 	  note = params[:record][:note]
 
-	  @record = Record.create(boat_id: boat_id, product_id: product, fecha: Time.gm(año, mes, dia), account: gasto, note: note)
+	  p @record = Record.create!(boat_id: boat_id, product_id: product, fecha: Time.gm(año, mes, dia), account: gasto, note: note)
+	  
 	  redirect_to records_path
+	  
 	end
 
 
 	def edit
-		 "Edit" * 50
+		p "Edit" * 50
          @record = Record.find(params[:record_id])
         # Hacía falta definir @categories en este método, ya que de otra forma no lo reconocía desde el group_select de la vista edit.
          @categories = Category.all
-
     end
 
     def update
