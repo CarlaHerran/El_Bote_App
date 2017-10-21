@@ -7,6 +7,7 @@
     <%=date_select(:calendar, :fecha)%>
 
 	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %>
+	<%= f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %>
 	<p>Amount:</p>
    	<%= f.text_field :account, class: "input" %>
    	<p>Add a Note:</p>
