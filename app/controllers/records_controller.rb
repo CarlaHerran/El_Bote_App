@@ -6,8 +6,10 @@ class RecordsController < ApplicationController
 	end
 
 	def new
-		p "Entramos al new record" * 20
+		p "-" * 50
 		@record = Record.new
+		@categories = Category.all
+		p @categories
 	end
 
 	def create
@@ -24,9 +26,7 @@ class RecordsController < ApplicationController
 	   mes = params[:calendar]["fecha(2i)"]
 	   dia = params[:calendar]["fecha(3i)"]
 	  product = params[:record][:product_id]
-
-	  p "-" * 50
-	  p gasto = params[:record][:account]
+	  gasto = params[:record][:account]
 	  if gasto == ""
 	  	gasto = 0.0
 	  end
