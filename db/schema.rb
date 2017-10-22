@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20171012183733) do
   end
 
   create_table "records", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "boat_id"
     t.integer "product_id"
     t.datetime "fecha"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20171012183733) do
     t.datetime "updated_at", null: false
     t.index ["boat_id"], name: "index_records_on_boat_id"
     t.index ["product_id"], name: "index_records_on_product_id"
+    t.index ["user_id"], name: "index_records_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

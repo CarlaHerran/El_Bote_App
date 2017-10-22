@@ -88,7 +88,7 @@ product16 = Product.create(name: "Otro", category_id: category5.id)
 
 
 
-record1 = Record.create(boat_id: boat1.id, product_id: product1.id, fecha: Time.gm(2017,"sep",15,13,13 ), account: 50.50, note: "Ay caramba")
+record1 = Record.create(user_id: user1.id, boat_id: boat1.id, product_id: product1.id, fecha: Time.gm(2017,"sep",15,13,13 ), account: 50.50, note: "Ay caramba")
 
 # record2 = Record.create(boat_id: boat1.id, product_id: product4.id, fecha: , account: 75.00, note: "Ay caramba")
 # record3 = Record.create(boat_id: boat1.id, product_id: product7.id, fecha: , account: 80.75, note: "Ay caramba")

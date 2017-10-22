@@ -8,7 +8,14 @@
 	  
     <!-- Aquí le puse grouped collection: group_method - The name of a method which, when called on a member of collection, returns an array of child objects representing the <option> tags. Y le quité el dropdown de productos anterior: (quitar espacio en piquitos para que funcione erb):
      < %=f.collection_select :product_id, Product.order(:name),:id,:name, include_blank: false %> -->
-	<%= grouped_collection_select(:category, :product_id, @categories, :products, :name, :id, :name, include_blank: false) %>
+
+  <div id="collection_input_div" >
+	   <%= grouped_collection_select(:category, :product_id, @categories, :products, :name, :id, :name, prompt: "Escoge un Producto...", include_blank: false) %>    
+    <!-- Trigger the modal with a button -->
+  </div>
+  <button type="button" class="btn btn-large btn-info" data-toggle="modal" data-target="#myModal">Añadir Nuevo Producto</button>
+
+
 	<p>Amount:</p>
    	<%= f.text_field :account, class: "input" %>
    	<p>Add a Note:</p>
@@ -20,3 +27,41 @@
  </p>
 <% end %>
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        
+            <div class="row">
+              <%= form_tag(create_product_path, :method => "post", :remote => true, :class => "navbar-form") do %>
+              
+              <div class="col-md-5 col-md-offset-2">
+                <%= text_field_tag "category", nil, :placeholder => "Nueva Categoria", :class => "form-control" %>
+              </div>
+
+              <div class="col-md-5 col-md-offset-2">
+                <%= text_field_tag "product", nil, :placeholder => "Nuevo Producto", :class => "form-control" %>
+              </div>
+
+              <div class="col-md-2">
+                <%= submit_tag "Crear", :class => "btn btn-sm btn-primary"  %>
+              </div>
+              <% end %>
+            </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

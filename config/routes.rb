@@ -11,12 +11,15 @@ Rails.application.routes.draw do
   get     '/categories',                           to: 'categories#category_options',      as: 'categories'
   get     '/stats',                                to: 'stats#show_stats',                 as: 'stats'
   delete  '/records/:record_id/destroy',           to: 'records#destroy',                  as: 'destroy_record'
-  post     '/records/:record_id/edit',             to: 'records#edit',                     as: 'edit_record'
+  get     '/records/:record_id/edit',             to: 'records#edit',                     as: 'edit_record'
+  get     '/records/new',                          to: 'records#new',                     as: 'new_record'
+  post     '/products/create',                     to: 'products#create',                     as: 'create_product'
+
+
 
 
   # post     '/users/:user_id',                     to: 'users#update',                       as: 'update_user'
- # get     '/records/new',                          to: 'records#new',                     as: 'new_record'
-  post     '/records/new',                          to: 'records#new',        			       as: 'new_record'
+ # post     '/records/new',                          to: 'records#new',        			       as: 'new_record'
   post  '/users/:id(.:format)',                     to: 'users#edit'
   post '/records/:record_id/update',                to: 'records#update',                  as: 'update_record'
   post   '/login',                                  to: 'sessions#create'

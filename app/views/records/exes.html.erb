@@ -1,5 +1,5 @@
 <div class="block">
-    <%= button_to "Añadir Nuevo Gasto", new_record_path, class: "btn btn-large btn-warning" %>
+    <%= link_to "Añadir Nuevo Gasto", new_record_path, class: "btn btn-large btn-warning" %>
 </div>
 
 <% if @exes %>
@@ -7,6 +7,7 @@
 	<div class="row">
 	<table class="table table-striped">
 	 <tr class="something">
+	   <th id="tabletitle1" class="col-md-2">USER</th>
 	   <th id="tabletitle1" class="col-md-2">PRODUCT</th>
 	   <th id="tabletitle2" class="col-md-2">Y / M / D</th>
 	   <th id="tabletitle3" class="col-md-2">AMOUNT</th>
@@ -15,6 +16,7 @@
 	 </tr>
 	 <% @exes.each do |exe| %>
 	   <tr>
+	     <td><%= exe.user.name %></td>
 	     <td><%= @products.find(exe.product_id).name %></td>
 	     <!-- Aquí le agregué month y day y year, dividiendo en 3 partes esta sección, para poder tener los datos completos del seed -->
 	     <!-- Aquí esto va a tener problemas si la clase de fecha es nil -->
@@ -22,7 +24,7 @@
 	     <td><%= exe.account %></td>
 	     <td><%= exe.note %></td></td>
 	    
-	     <td><%= button_to 'Edit', edit_record_path(exe), class: 'btn btn-primary' %></td>
+	     <td><%= link_to 'Edit', edit_record_path(exe), class: 'btn btn-primary' %></td>
 	     <td><%= button_to 'Destroy', destroy_record_path(exe), class: 'btn btn-danger', method: :delete,
                                   data: { confirm: "You sure?" } %></td>
 	   </tr>

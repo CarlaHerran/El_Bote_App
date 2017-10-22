@@ -2,6 +2,13 @@ class User < ApplicationRecord
   attr_accessor :remember_token
   has_many :oceans
   has_many :boats, through: :oceans
+  has_many :records
+  # el has_many lo que crea es un metodo para crear un array de los records que estan relacionados con un user
+  # para ver los records de un user sol tienes que llamar al metodo records (user.records)
+  # para relacionar un nuevo record con un user es como si le metieras a un array un record nuevo 
+  # user.records << record
+
+
 
   before_save { self.email = email.downcase }
   validates :name,  presence: true, length: { maximum: 50 }
